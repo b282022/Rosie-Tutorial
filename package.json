@@ -1,0 +1,17 @@
+{
+  "name": "rosietutorial",
+  "version": "1.0.0",
+  "description": "Tutorial regarding the Rosie ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rosie"
+  ],
+  "author": "Mihir Shah <superm15@protonmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "rosie": "^2.0.1"
+  }
+}
