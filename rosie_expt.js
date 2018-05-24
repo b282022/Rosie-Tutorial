@@ -74,6 +74,8 @@ var mathObject = Factory.build('mathematics')
 console.log(mathObject.addition(5, 2));
 console.log(mathObject.subtraction(5, 3));
 try {
+  // Will go to catch block since `a` and `b` were not present when the
+  // mathObject was built from the factory.
   console.log(mathObject.multiplication());
 } catch (e)  {
   console.error(e.message);
@@ -81,10 +83,15 @@ try {
 mathObject.a = 2;
 mathObject.b = 3;
 try {
+  // This also will go to catch block since `a` and `b` were not present when
+  // the mathObject was built from the factory and hence the generator function
+  // will complain.
   console.log(mathObject.multiplication());
 } catch (e) {
   console.error(e.message);
 }
 
 var mathObject = Factory.build('mathematics', {'a' : 2, 'b' : 3});
+// No exception thrown since the `a` and `b` were present when the mathObject
+// was built
 console.log(mathObject.multiplication());
